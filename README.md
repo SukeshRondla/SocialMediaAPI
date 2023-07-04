@@ -1,2 +1,2 @@
 # FastApi-Project
-Developing the fastapi application using the Fast Api
+Developing the Social Media application using the Fast Api
