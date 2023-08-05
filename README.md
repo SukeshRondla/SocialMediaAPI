@@ -6,6 +6,7 @@ This repository contains a FastAPI-based backend for a social media app resembli
 
 ### 1) Post Route
 
+
 - **Endpoint**: `/posts`
 - **Description**: This route handles creating, deleting, updating, and fetching posts.
 
