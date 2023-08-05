@@ -1,80 +1,73 @@
-# Backend clone  of social media app by using FastAPI
+# Instagram Clone API using FastAPI
 
-#### This API  has 4 routes
+This repository contains a FastAPI-based backend for a social media app resembling Instagram. The API offers four main routes for creating and managing posts, users, authentication, and voting/liking posts.
 
-## 1) Post route
+## Routes
 
-#### This route is reponsible for creating post, deleting post, updating post and Checkinh post
+### 1) Post Route
 
-## 2) Users route
+- **Endpoint**: `/posts`
+- **Description**: This route handles creating, deleting, updating, and fetching posts.
 
-#### This route is about creating users and searching user by id
+### 2) Users Route
 
-## 3) Auth route
+- **Endpoint**: `/users`
+- **Description**: This route manages user creation and user search by ID.
 
-#### This route is about login system
+### 3) Auth Route
 
-## 4) Vote route
+- **Endpoint**: `/auth`
+- **Description**: This route handles user authentication and login.
 
- #### This route is about likes or vote system and this route contain code for upvote or back vote there is not logic about down vote
+### 4) Vote Route
 
-# how to run locally
-First clone this repo by using following command
-````
+- **Endpoint**: `/votes`
+- **Description**: This route manages the likes/votes system for posts. It currently includes the logic for upvoting but not downvoting.
 
-git clone https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git
+## How to Run Locally
 
-````
-then 
-````
+Follow these steps to run the FastAPI locally on your machine:
 
-cd fastapi-course
+1. Clone the repository:
 
-````
+   ```bash
+   git clone https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git
+   cd fastapi-course
+   ```
 
-Then install fastapp using all flag like 
+2. Install FastAPI and required dependencies:
 
-````
+   ```bash
+   pip install fastapi[all]
+   ```
 
-pip install fastapi[all]
+3. Run the FastAPI server:
 
-````
+   ```bash
+   uvicorn main:app --reload
+   ```
 
-Then go this repo folder in your local computer run follwoing command
-````
+4. Access the API documentation by opening the following link in your browser:
 
-uvicorn main:app --reload
+   ```
+   http://127.0.0.1:8000/docs
+   ```
 
-````
+## Database Setup
 
-Then you can use following link to use the  API
+Ensure you have a PostgreSQL database created. Create a `.env` file in the project folder with the following configurations:
 
-````
+```dotenv
+DATABASE_HOSTNAME=localhost
+DATABASE_PORT=5432
+DATABASE_PASSWORD=your_database_password
+DATABASE_NAME=your_database_name
+DATABASE_USERNAME=your_database_username
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+```
 
-http://127.0.0.1:8000/docs 
+Replace the placeholders (`your_...`) with your actual database and secret key details. The secret key can be obtained from the FastAPI documentation.
 
-````
-
-## After run this API you need a database in postgres 
-Create a database in postgres then create a file name .env and write the following things in you file 
-
-````
-DATABASE_HOSTNAME = localhost
-DATABASE_PORT = 5432
-DATABASE_PASSWORD = passward_that_you_set
-DATABASE_NAME = name_of_database
-DATABASE_USERNAME = User_name
-SECRET_KEY = 09d25e094faa2556c818166b7a99f6f0f4c3b88e8d3e7 
-ALGORITHM = HS256
-ACCESS_TOKEN_EXPIRE_MINUTES = 60(base)
-
-````
-### Note: SECRET_KEY in this exmple is just a psudo key. You need to get a key for youself and you can get the SECRET_KEY  from fastapi documantion
- 
-
-### Here is the link of the playlist on youtube you can learn all about FASTAPI
- 
-<div id="badges">
-  <a href="https://www.youtube.com/watch?v=Yw4LmMQXXFs&list=PL8VzFQ8k4U1L5QpSapVEzoSfob-4CR8zM&index=2">
-    <img src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?label=Subscribers&style=for-the-badge&color=red&labelColor=ce4630" alt="youtube Badge"/>
-  </a>
+**Note**: The provided `SECRET_KEY` in this example is a placeholder. You should generate a proper secret key for security purposes.
