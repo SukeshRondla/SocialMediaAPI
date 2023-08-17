@@ -32,8 +32,8 @@ Follow these steps to run the FastAPI locally on your machine:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git
-   cd fastapi-course
+   git clone https://github.com/SukeshRondla/fastapi-SocialMediaAPI.git
+   cd fastapi-SocialMediaAPI
    ```
 
 2. Install FastAPI and required dependencies:
