@@ -3,7 +3,6 @@
 This repository contains a FastAPI-based backend for a social media app resembling Instagram. The API offers four main routes for creating and managing posts, users, authentication, and voting/liking posts.
 
 ## Routes
-
 ### 1) Post Route
  
 - **Endpoint**: `/posts`
