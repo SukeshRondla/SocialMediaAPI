@@ -6,9 +6,7 @@ services:
       - 8000:8000
     volumes:
       - ./:/usr/src/app
-    # env_file:
-    #     - ./.env
-    environment:
+    environment: &app-env
       - DATABASE_HOSTNAME=postgres
       - DATABASE_PORT=5432
       - DATABASE_PASSWORD=password123
@@ -24,7 +22,7 @@ services:
   postgres:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=password123
+      <<: *app-env
       - POSTGRES_DB=fastapi
     volumes:
       - postgres-db:/var/lib/postgresql/data
