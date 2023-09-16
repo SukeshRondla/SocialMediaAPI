@@ -1,14 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from .database import engine
-from .routers import post, user, auth, vote
 from .config import settings
+from .routers import post, user, auth, vote
 
 app = FastAPI()
 
-# Load CORS origins from environment variables or configure it as needed.
-origins = ["*"]  # You can replace this with settings.CORS_ORIGINS or an environment variable.
+# Load CORS origins from environment variables or configure them as needed.
+origins = settings.CORS_ORIGINS or ["*"]
 
 app.add_middleware(
     CORSMiddleware,
